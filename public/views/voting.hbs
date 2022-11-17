@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+*{
+    background-color: black;
+}
+
+h1{
+    color: white;
+}
+#id_obj{
+    float: left;
+
+}
+
+#id_megatron{
+    float: right;
+
+}
+
+#id_voteobj{
+    margin: 25 px 25 px 25 px 25 px;
+    float: left;
+}
+
+#id_votemegatron{
+    margin: 25 px 25 px 25 px 25 px;
+    float: right;
+}
+
+</style>
+</head>
+<body>
+    <a href="https://user.tjhsst.edu/2023jlalwani/">Return to Homepage</a><br><br><br>
+<h1>Who made the better Catch?</h1>
+
+{{#each data}}
+    <img src="https://user.tjhsst.edu/2023jlalwani/img/{{this.name}}.gif" id = "id_{{this.name}}">
+    
+    <a href="https://user.tjhsst.edu/2023jlalwani/voteprocess?player={{this.name}}" id = "id_vote{{this.name}}">{{this.name}} {{this.up}}</a>
+
+{{/each}}
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Madlib Form</title>
+</head>
+<body>
+
+
+<h2>MadLib Form</h2>
+
+<form action="./madlibresult">
+	<label for="id_name">What is your first name?</label>
+	<input type="text" id="id_name" name="f_name" placeholder="Your Name"><br>
+
+    <p>What grade are you in?</p>
+    <input type="radio" id="id_9" name="f_grade" value="9th">
+    <label for="id_9">9</label><br>
+    <input type="radio" id="id_10" name="f_grade" value="10th">
+    <label for="id_10">10</label><br>
+    <input type="radio" id="id_11" name="f_grade" value="11th">
+    <label for="id_11">11</label><br>
+    <input type="radio" id="id_12" name="f_grade" value="12th">
+    <label for="id_12">12</label><br>
+    
+    <label for="id_animal">What is your favorite animal?</label>
+	<input type="text" id="id_animal" name="f_animal" placeholder="Favorite Animal"><br><br>
+	
+	<label for="id_ball">Pick your favorite of the 3 sports:</label>
+	<select id="id_ball" name = "f_ball">
+	    <option value="football">football</option>
+	    <option value="basketball">basketball</option>
+	    <option value="baseball">baseball</option>
+	</select>
+	
+	<p>Are you right-handed or left-handed?</p>
+	<input type="radio" id="id_right" name="f_hand" value="right">
+    <label for="id_right">right</label><br>
+    <input type="radio" id="id_left" name="f_hand" value="left">
+    <label for="id_left">left</label><br><br>
+	
+	<button type="submit" value="Submit">Submit</button>
+</form> 
+
+
+</body>
+</html>

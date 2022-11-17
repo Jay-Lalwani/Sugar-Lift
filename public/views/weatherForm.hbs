@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <style>
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+
+</style>
+
+    <a href="https://user.tjhsst.edu/2023jlalwani/">Return to Homepage</a><br><br><br>
+<head>
+	<title>Weather Form</title>
+</head>
+<body>
+
+<form action="./getWeather">
+	<label for="id_lat">Latitude:</label>
+	<input type="text" id="id_lat" name="lat" placeholder="Lat"><br>
+
+    <label for="id_long">Longitude:</label>
+	<input type="text" id="id_long" name="long" placeholder="Long"><br>
+	
+	<button type="submit" value="Submit">Submit</button>
+</form> 
+
+
+</body>
+</html>
