@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+        <style>
+a{
+    position: absolute;
+  right: 10px;
+}
+
+.log:link, .log:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+ 
+}
+
+.log:hover, .log:active {
+  background-color: red;
+}
+
+h1{
+    color: red;
+    position: relative;
+    left: 45%;
+    right: 55%;
+
+}
+
+
+</style>
+<head>
+	<title>Sugar Lift</title>
+	
+</head>
+<body>
+
+
+{{#if login}}
+
+<a href="https://sugar-lift.sites.tjhsst.edu/logout" class="log">Logout</a>
+<h1>Sugar Lift</h1>
+{{else}}
+<a href="https://sugar-lift.sites.tjhsst.edu/login" class="log">Login</a>
+<h1>Sugar Lift</h1>
+{{/if}}
+
+
+<canvas id="myChart" width="400" height="400"></canvas>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    
+   const ctx = document.getElementById('myChart');
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00","24:00"],
+        datasets: [{
+            label: 'Blood Sugar',
+            data: [120, 190, 130, 150, 170, 100],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+    
+    
+</script>
+
+
+<form action="https://sugar-lift.sites.tjhsst.edu/exercise">
+	<label for="exerciseType">Choose your exercise:</label>
+
+    <select name="exerciseType" id="exerciseType">
+      <option value="cardio">Cardio</option>
+      <option value="weightlifting">Weightlifting</option>
+    </select>
+    <input type="submit" name="GO" value="Go"/>
+</form> <br><br>
+</body>
+</html>

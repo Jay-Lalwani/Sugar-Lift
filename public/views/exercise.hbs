@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<title>Recommendations for Type 1 Diabetics</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: "Poppins", sans-serif;
+			text-align: center;
+			padding: 30px;
+		}
+		h3 {
+			color: #f44336;
+			font-size: 36px;
+			font-weight: bold;
+			margin-bottom: 50px;
+		}
+		p {
+			font-size: 18px;
+			margin-bottom: 20px;
+			color: black;
+		}
+		ul {
+			list-style-type: square;
+			font-size: 18px;
+			margin-left: 50px;
+			margin-right: 50px;
+			text-align: left;
+			color: black;
+			padding-left: 15px;
+		}
+		li {
+			margin-bottom: 10px;
+		}
+		.highlight {
+			color: #f44336;
+			font-weight: bold;
+		}
+		.disclaimer {
+			font-size: 14px;
+			margin-top: 20px;
+			color: gray;
+		}
+		button {
+			background-color: #f44336;
+			color: white;
+			padding: 10px 20px;
+			font-size: 18px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 30px;
+		}
+		button:hover {
+			background-color: #ff8c7f;
+		}
+	</style>
+</head>
+<body>
+	<h3>{{message}}</h3>
+	<p class="disclaimer">Please note that these are general recommendations and may not apply to everyone. Always consult with your healthcare provider before making any changes to your diabetes management plan.</p>
+	<button onclick="startTimer()">Start Exercise</button>
+	<br>
+	<p>General tips for maintaining blood sugar during exercise:</p>
+	<ul>
+		<li>Check your blood sugar level before and after exercising</li>
+		<li>Bring snacks or drinks with you to manage low blood sugar</li>
+		<li>Wear a <span class="highlight">medical identification bracelet</span></li>
+		<li>Stay hydrated</li>
+		<li>Modify your insulin doses if necessary</li>
+	</ul>
+	<script>
+		function startTimer() {
+			window.location.href = "https://sugar-lift.sites.tjhsst.edu/lift";
+		}
+	</script>
+</body>
+</html>
