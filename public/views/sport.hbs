@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <title>Sport Tracker</title>
+        <style>
+      body {
+        background-color: #f1f1f1;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        color: #f44336;
+        margin-top: 20px;
+      }
+
+      #timer {
+        font-size: 3em;
+        text-align: center;
+        margin-top: 50px;
+        color: #f44336;
+      }
+
+      #end {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        background-color: #f44336;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        margin-top: 30px;
+      }
+
+      #end:hover {
+        cursor: pointer;
+        background-color: #c62828;
+      }
+
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+        margin-top: 50px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #f44336;
+      }
+
+      input[type="text"], input[type="number"] {
+        width: 95%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+        margin-bottom: 20px;
+      }
+
+      button[type="button"] {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        background-color: #f44336;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        margin-top: 20px;
+      }
+
+      button[type="button"]:hover {
+        cursor: pointer;
+        background-color: #c62828;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <p id="timer">0:00</p>
+
+<form>
+  <label for="sport">Sport:</label>
+  <input type="text" id="sport" name="sport"><br><br>
+
+  <button type="button" onclick="stopTimer()">Add Sport Session</button>
+</form>
+    <script>
+      var startTime;
+      var timerInterval;
+
+      function startTimer() {
+        startTime = new Date().getTime();
+        timerInterval = setInterval(updateTimer, 1000);
+      }
+
+      function updateTimer() {
+        var elapsedTime = new Date().getTime() - startTime;
+        var minutes = Math.floor(elapsedTime / 60000);
+        var seconds = Math.floor((elapsedTime % 60000) / 1000);
+
+        var timerElement = document.getElementById("timer");
+        timerElement.innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+      }
+
+      function stopTimer() {
+      clearInterval(timerInterval);
+  
+      var sports = document.getElementById("sport").value;
+      var times = document.getElementById("timer").innerHTML;
+
+    
+      // Create an array to hold the lift data
+      var sportDatas = [];
+    
+    sportDatas.push({sport: sports, time: times});
+
+ 
+      // Make a POST request to the server with the lift data
+      fetch('/addSport', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({sportData: sportDatas})
+      })
+      .then(function(response) {
+        if (response.ok) {
+          console.log('Lift data saved successfully.');
+          window.location.href = "https://sugar-lift.sites.tjhsst.edu/#history";
+        } else {
+          console.log('Error saving lift data.');
+        }
+      })
+      .catch(function(error) {
+        console.log('Error saving lift data.');
+        console.error(error);
+      });
+    }
+    
+      startTimer();
+    </script>
+    
+  </body>
+</html>
