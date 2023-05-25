@@ -10,7 +10,7 @@ Website: https://sugar-lift.sites.tjhsst.edu
 
 Github: https://github.com/Jay-Lalwani/Sugar-Lift 
 
-To run the code:
+**To Run the Code:**
 
 First download the “public” folder onto your computer
 Make sure you have Node.js and npm installed on your computer
