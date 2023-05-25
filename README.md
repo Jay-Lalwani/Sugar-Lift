@@ -13,10 +13,15 @@ Github: https://github.com/Jay-Lalwani/Sugar-Lift
 **To Run the Code:**
 
 First download the “public” folder onto your computer
+
 Make sure you have Node.js and npm installed on your computer
+
 Open a terminal and navigate to the "public" folder in your project directory
+
 Run “npm install” to install the required dependencies specified in the package.json file
+
 Run “npm start” to start the Express server and run the code in the index.js file
+
 Open a web browser and navigate to the appropriate URL.
 
 Note: These steps will only work if you change the code to use your own MySQL server keys, your website URL or local port, and your Dexcom Developer registered account
